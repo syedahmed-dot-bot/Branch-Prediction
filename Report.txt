@@ -1,0 +1,26 @@
+Ahmed Hussain Syed- 2273474
+Computer Architecture (Dr. Weidong Shi)
+-------------------------------------------
+
+Branch Prediction: 
+
+Branch prediction is an optimization technique which predicts the path a code will take before it is known for sure. This matters because while executing a code, the machine loads the few code statements in advance and keeps it in the pipeline. The problem occurs when there is a conditional branch in which case, there are two possible paths or code section that can be executed.
+
+You can think of the computer to have two operational units:
+
+- One executes commands or performs arithmetic/ logical operations
+- One fetches data from the main memory
+
+Both of the above two process can run in parallel to make your program execute faster. In this sense, when the computer is performing the operations in L1, one part of the computer will read the instructions of L2.
+
+Now, reading from main memory takes a lot of time, so, by reading in parallel to execution, your computing device is saving a lot of time.
+
+The problem arises in case of conditional statement. Consider that L1 is a conditional statement. If L1 evaluates to be true, the next instruction will be L2 or else it will be L3.
+
+The computer will know which statement to execute after the evaluation of L1 but it will not sit ideal during the evaluation time. Your computing device will make a smart guess and choose either of L2 or L3 and load it into memory. If the guess turns out to be correct, everything goes well but it is turns out to be wrong, then the loaded instruction should be dropped and the actual instruction has to be read which consumes additional time and hence, the program execution goes slow.
+
+In general, the guess made by your computing device is based upon:
+
+The path taken in previous execution of the program
+This is the general idea behind branch prediction. There are a lot of other details behind the exact execution of this optimization which we will cover in a separate article.
+
